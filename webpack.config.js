@@ -3,14 +3,18 @@ const createExpoWebpackConfigAsync = require('@expo/webpack-config');
 module.exports = async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv);
   
-  // 自定义配置
   return {
     ...config,
     resolve: {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
-        'react-native$': 'react-native-web'
+        'react-native$': 'react-native-web',
+        'styled-components/native': 'styled-components'
+      },
+      fallback: {
+        ...config.resolve.fallback,
+        'stylis': require.resolve('stylis')
       }
     }
   };

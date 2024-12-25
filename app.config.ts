@@ -15,7 +15,8 @@ const config: ExpoConfig = {
   ],
   experiments: {
     tsconfigPaths: true
-  }
+  },
+  scheme: 'server-dashboard'
 };
 
 export default config; 

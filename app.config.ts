@@ -19,7 +19,17 @@ const config: ExpoConfig = {
     '**/*'
   ],
   web: {
-    favicon: './assets/favicon.png'
+    favicon: './assets/favicon.png',
+    bundler: 'webpack',
+    output: 'static',
+    build: {
+      babel: {
+        dangerouslyAddModulePathsToTranspile: [
+          '@react-native-community',
+          'react-native-charts-wrapper'
+        ]
+      }
+    }
   }
 };
 

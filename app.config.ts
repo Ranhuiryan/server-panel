@@ -12,24 +12,10 @@ const config: ExpoConfig = {
     resizeMode: 'contain',
     backgroundColor: '#F5F9FF'
   },
-  updates: {
-    fallbackToCacheTimeout: 0
-  },
-  assetBundlePatterns: [
-    '**/*'
-  ],
   web: {
     bundler: 'metro',
-    favicon: './assets/favicon.png',
     output: 'static',
-    build: {
-      babel: {
-        dangerouslyAddModulePathsToTranspile: [
-          '@react-native-community',
-          'react-native-charts-wrapper'
-        ]
-      }
-    }
+    favicon: './assets/favicon.png'
   },
   plugins: [
     'expo-router'

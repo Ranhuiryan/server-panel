@@ -19,8 +19,8 @@ const config: ExpoConfig = {
     '**/*'
   ],
   web: {
+    bundler: 'metro',
     favicon: './assets/favicon.png',
-    bundler: 'webpack',
     output: 'static',
     build: {
       babel: {
@@ -30,6 +30,12 @@ const config: ExpoConfig = {
         ]
       }
     }
+  },
+  plugins: [
+    'expo-router'
+  ],
+  experiments: {
+    tsconfigPaths: true
   }
 };
 

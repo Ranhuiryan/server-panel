@@ -1,23 +1,15 @@
 {
+  "version": 2,
+  "framework": "nextjs",
   "buildCommand": "npx expo export:web",
   "outputDirectory": "web-build",
-  "devCommand": "npx expo start --web",
-  "framework": "react",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ],
-  "headers": [
-    {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
+  "env": {
+    "NODE_ENV": "production"
+  }
 } 
